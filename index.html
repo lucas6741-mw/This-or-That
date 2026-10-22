@@ -25,7 +25,7 @@ There are no known issues at the moment
 -->
     
    <head> 
-      <title>Cold or Allergy</title>  
+      <title>Broken or sprain</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,28 +34,28 @@ There are no known issues at the moment
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
-        var allergy_percent = 0;
-        var cold_percent = 0;
+        var sprain_count = 0;
+        var broken_count = 0;
+        var sprain_percent = 0;
+        var broken_percent = 0;
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-            alert("allergy_count is " + allergy_count + "\ncold_count is " + cold_count);
+        function sprainAdd(){
+            sprain_count = sprain_count + 1;
+            alert("sprain_count is " + sprain_count + "\nbroken_count is " + broken_count);
         }
          
 
-         function coldAdd(){
-             cold_count = cold_count + 1;
-             alert("allergy_count is " + allergy_count + "\ncold_count is " + cold_count);
+         function brokenAdd(){
+             broken_count = broken_count + 1;
+             alert("sprain_count is " + sprain_count + "\nbroken_count is " + broken_count);
         }
         
         function changeText(){
-            var allergy_percent = allergy_count/(allergy_count + cold_count)*100
-            var cold_percent = cold_count/(allergy_count + cold_count)*100
+            var sprain_percent = sprain_count/(sprain_count + broken_count)*100
+            var broken_percent = broken_count/(sprain_count + broken_count)*100
             var initalText = document.getElementById("results");
-            initalText.innerHTML = "Probability it is allergies = " + allergy_percent + "% <br> Probability it is a cold = " + cold_percent + "%"
+            initalText.innerHTML = "Probability it is sprain = " + sprain_percent + "% <br> Probability it is a broken = " + broken_percent + "%"
         }
     
         
@@ -77,24 +77,28 @@ There are no known issues at the moment
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(270, 81%, 54%); 
 }
 
   .page:target {
     left: 0vw;
     z-index: 1;
 }
+
+.w3-container h1 {
+    font-family: 'Times New Roman', serif; 
+}
 </style>
 
-<body style="background-color: hsl ( 325, 46%, 79%) ;"></body>
+<body style="background-color: hsl ( 370, 81%, 54%) ;"></body>
 <div id="header" class="w3-container w3-flat-turquoise">
-    <h1>Cold or Allergies?</h1>
+    <h1>Broken or sprain?</h1>
 </div>
     
 <div id="content" class="w3-container">
-    <p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+    <p>Are you feeling like you might have a broken but wonder if it is a sprain. Answer a few short questions to find out!</p>
     
-    <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+    <a href="#one" class="w3-btn w3-yellow w3-round-xxlarge w3-xxxlarge "> Get Started </a>
     
     <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code             does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
     
@@ -102,86 +106,87 @@ There are no known issues at the moment
 </div>
     
 <div class="page" id="one">
-    <div id="header" class="w3-container w3-flat-carrot">
+    <div id="header" class="w3-container w3-flat-midnight-blue">
         <h1>Question 1</h1>
     </div>
     
         <div id="content" class="w3-container">
-        <p> Are you having itchy eyes?</p>    
-        <a href="#two" onclick="allergyAdd()" class="w3-btn w3-blue w3-round"> yes </a>
-        <a href="#two" onclick="coldAdd()" class="w3-btn w3-red w3-round"> no </a>
+        <p>Did you hear a crack or snap doing the acident?</p>    
+        <a href="#two" onclick="brokenAdd()" class="w3-btn w3-blue w3-round-xxlarge w3-xxxlarge "> yes </a> <!-- made the button say yes -->
+        <a href="#two" onclick="sprainAdd()" class="w3-btn w3-red w3-round-xxlarge w3-xxxlarge "> no </a> <!--made button say no -->
+        <img src="Image/images.jpeg"
     </div>
 </div>
 
 <div class="page" id="two">
-    <div class="w3-container w3-flat-carrot">
+    <div class="w3-container w3-flat-midnight-blue">
         <h1>Question 2</h1>
     </div>
     
     <div id="content" class="w3-container">
-        <p>Are you running a fever?</p>
-        <a href="#three" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#three" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+        <p>Do you feel a crunching sensation?</p>
+        <a href="#three" onclick="brokenAdd()" class="w3-btn w3-blue w3-round-xxlarge w3-xxxlarge "> Yes </a>
+        <a href="#three" onclick="sprainAdd()" class="w3-btn w3-red w3-round-xxlarge w3-xxxlarge "> No </a>
     </div>
 </div>  
 
 <div class="page" id="three">
-    <div class="w3-container w3-flat-carrot">
+    <div class="w3-container w3-flat-midnight-blue">
         <h1>Question 3</h1>
     </div>
     
     <div id="content" class="w3-container">
-        <p> Are you coughing a lot?</p>
-        <a href="#four" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#four" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+        <p> Are you experienceing numbness?</p>
+        <a href="#four" onclick="brokenAdd()" class="w3-btn w3-blue w3-round-xxlarge w3-xxxlarge "> Yes </a>
+        <a href="#four" onclick="sprainAdd()" class="w3-btn w3-red w3-round-xxlarge w3-xxxlarge "> No </a>
     </div>
 </div>
 <div class="page" id="four">
-    <div class="w3-container w3-flat-carrot">
+    <div class="w3-container w3-flat-midnight-blue">
         <h1>Question 4</h1>
     </div>
     
     <div id="content" class="w3-container">
-        <p>Do you feel aches and pains?</p>
-        <a href="#five" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> yes </a>
-        <a href="#five" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+        <p> Can you bear any weight on it ?</p>
+        <a href="#five" onclick="sprainAdd()" class="w3-btn w3-blue w3-round-xxlarge w3-xxxlarge "> yes </a>
+        <a href="#five" onclick="brokenAdd()" class="w3-btn w3-red w3-round-xxlarge w3-xxxlarge "> No </a>
     </div>
 </div>
 <div class="page" id="five">
-    <div class="w3-container w3-flat-carrot">
+    <div class="w3-container w3-flat-midnight-blue">
         <h1>Question 5 </h1>
     </div>
     
     <div id="content" class="w3-container">
-        <p> Do you have a sore throat?</p>
-        <a href="#six" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#six" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+        <p> is the injury mishapend?</p>
+        <a href="#six" onclick="brokenAdd()" class="w3-btn w3-blue w3-round-xxlarge w3-xxxlarge "> Yes </a>
+        <a href="#six" onclick="sprainAdd()" class="w3-btn w3-red w3-round-xxlarge w3-xxxlarge "> No </a>
     </div>
 </div>
 <div class="page" id="six">
-    <div class="w3-container w3-flat-carrot">
+    <div class="w3-container w3-flat-midnight-blue">
         <h1>Question 6</h1>
     </div>
     
     <div id="content" class="w3-container">
-        <p> Did you get sick in the winter?</p>
-        <a href="#seven" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#seven" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+        <p> is the pain on top of the bone?</p>
+        <a href="#seven" onclick="brokenAdd()" class="w3-btn w3-blue w3-round-xxlarge w3-xxxlarge "> Yes </a>
+        <a href="#seven" onclick="sprainAdd()" class="w3-btn w3-red w3-round-xxlarge w3-xxxlarge "> No </a>
     </div>
 </div>
 <div class="page" id="seven">
-    <div class="w3-container w3-flat-carrot">
+    <div class="w3-container w3-flat-midnight-blue">
         <h1>Results</h1>
     </div>
     
     <div id="content" class="w3-container">
         <p id="results"> Press on the bottom to see your results!</p>
-        <a onclick="changeText()" class="w3-btn w3-grey w3-round"> Click here for results!</a>
+        <a onclick="changeText()" class="w3-btn w3-grey w3-round-xxlarge w3-xxxlarge "> Click here for results!</a>
     </div>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-peter-river">
-    <p>DIY!</p>
+    <p>6767!</p>
 </footer>
 
 </body>
